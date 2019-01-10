@@ -1,0 +1,13 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
+@import '_variables.scss';
+
+@import '~bootstrap/scss/bootstrap';
+
+@import '_custom.scss';
+
+.footer-dark {
+	background-color:#3c3c3c;
+	color:white;
+	padding:$jumbotron-padding;
+}

@@ -48,15 +48,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       minify: true,
-      filename: 'connect.html',
+      filename: 'contact.html',
       inject: 'body',
-      template: 'nunjucks-html-loader!./src/templates/connect.njk',
-    }),
-    new HtmlWebpackPlugin({
-      minify: true,
-      filename: 'elements.html',
-      inject: 'body',
-      template: 'nunjucks-html-loader!./src/templates/elements.njk',
+      template: 'nunjucks-html-loader!./src/templates/contact.njk',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',

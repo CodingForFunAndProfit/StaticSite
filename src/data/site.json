@@ -1,0 +1,10 @@
+{ 
+	"pages": {
+		"index": {
+			"title": "Sitename: Sitedescription"
+		},
+		"contact": {
+			"title": "Sitename: Contact us."
+		}
+	}
+}

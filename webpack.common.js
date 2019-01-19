@@ -5,11 +5,13 @@ const TransferWebpackPlugin = require('transfer-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const precss = require('precss');
+var sitedata = require('./src/data/site.json');
 //const ImageminPlugin = require('imagemin-webpack-plugin');
 //const ImageminPlugin = require('imagemin-webpack-plugin').default;
 //import ImageminPlugin from 'imagemin-webpack-plugin';
 
 module.exports = {
+  
   entry: [
     
     './src/app.js',
@@ -26,7 +28,8 @@ module.exports = {
       use: ['html-loader',{
         loader: 'nunjucks-html-loader',
         options : {
-          searchPaths: ['./src/templates']
+          searchPaths: ['./src/templates'],
+          context: sitedata,
         }
       }]
     }]
@@ -35,22 +38,14 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      title: 'WebWorker - Developing, Consulting & Networking',
+      filename: 'index.html',  
+      template: './src/templates/index.njk',
       inject: 'body',
-      template: 'nunjucks-html-loader!./src/templates/index.njk',
-      minify: true,
-      /*
-        templateParameters: '',
-        favicon: '',
-        meta: '',
-      */
     }),
     new HtmlWebpackPlugin({
-      minify: true,
       filename: 'contact.html',
+      template: './src/templates/contact.njk',
       inject: 'body',
-      template: 'nunjucks-html-loader!./src/templates/contact.njk',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',

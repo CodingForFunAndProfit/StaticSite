@@ -6,7 +6,8 @@ module.exports = merge(common, {
   mode: 'development',
 
   devServer: {
-	hot: true
+    contentBase: './src/',
+    watchContentBase: true,
   },
 
   module: {
@@ -45,38 +46,6 @@ module.exports = merge(common, {
             'image-webpack-loader?bypassOnDebug'
         ]
       }
-    /*
-    {
-      test: /\.(gif|png|jpe?g|svg)$/i,
-      use: [
-        'file-loader',
-        {
-          loader: 'image-webpack-loader',
-          options: {
-            mozjpeg: {
-              progressive: true,
-              quality: 65
-            },
-            // optipng.enabled: false will disable optipng
-            optipng: {
-              enabled: false,
-            },
-            pngquant: {
-              quality: '65-90',
-              speed: 4
-            },
-            gifsicle: {
-              interlaced: false,
-            },
-            // the webp option will enable WEBP
-            webp: {
-              quality: 75
-            }
-          }
-        },
-      ],
-    }
-    */
     ]
   },
 
